@@ -15,7 +15,7 @@
 
 ## Overview
 
-This is an example application showing Auth.js (`5.0.0-beta.13`) and Prisma (`5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware.
+This is an example application showing Auth.js (`next-auth@5.0.0-beta.13`) and Prisma (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware.
 
 ## Getting Started
 
