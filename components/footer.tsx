@@ -1,4 +1,5 @@
 import CustomLink from "./custom-link"
+import packageJSON from "../package.json"
 
 export default function Footer() {
   return (
@@ -9,6 +10,11 @@ export default function Footer() {
         Source on GitHub
       </CustomLink>
       <CustomLink href="/policy">Policy</CustomLink>
+
+      <p>
+        <CustomLink href="https://nextjs.authjs.dev">Auth.js</CustomLink>:{" "}
+        <em>next-auth@{packageJSON.dependencies["next-auth"]}</em>
+      </p>
     </footer>
   )
 }

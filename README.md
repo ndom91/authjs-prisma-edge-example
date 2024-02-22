@@ -40,7 +40,7 @@ pnpm install
 Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
 
 ```bash
-cp .env.local.example .env.local
+cp .env.example .env
 ```
 
 Add details for one or more providers (e.g. Google, Twitter, GitHub, Email, etc).
@@ -62,13 +62,6 @@ To run your site locally, use:
 ```bash
 pnpm dev
 ```
-
-## Acknowledgements
-
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
-<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/main/docs/static/img/powered-by-vercel.svg" alt="Powered By Vercel" />
-</a>
-<p align="left">Thanks to Vercel sponsoring this project by allowing it to be deployed for free for the entire Auth.js Team</p>
 
 ## License
 
