@@ -15,9 +15,11 @@
 
 ## 🧭 Overview
 
-This is an example application showing Auth.js (`next-auth@5.0.0-beta.13`) and Prisma (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware. This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma changed their client to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as we couldn't update the expiry time of a database-based session in the `middleware` handler. 
+This is an example application showing [Auth.js](https://authjs.dev) (`next-auth@5.0.0-beta.13`) and [Prisma](https://prisma.io) (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware. 
 
-Prisma is now rolling out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. This means that `@prisma/adapter-pg` is unfortunately not included for edge support at the moment as it is using the PostgreSQL-native TCP protocol. 
+This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma began making changes to their client, for example, to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as the `strategy: 'database'` didn't work because we couldn't update the expiry time of a database-based session in the `middleware` handler. 
+
+Prisma is now rolling out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. This means that `@prisma/adapter-pg` is unfortunately not going to be supported under edge runtimes for the time being as it is using the PostgreSQL-native TCP protocol. 
 
 As this example shows, however, using Prisma + Auth.js with an Edge-compatible database provider and adapter like Neon (Vercel Postgres), PlanetScale or Turso is beginning to become much more straightforward!
 
