@@ -13,11 +13,15 @@
    </p>
 </p>
 
-## Overview
+## 🧭 Overview
 
-This is an example application showing Auth.js (`next-auth@5.0.0-beta.13`) and Prisma (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware.
+This is an example application showing Auth.js (`next-auth@5.0.0-beta.13`) and Prisma (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware. This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma changed their client to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as we couldn't update the expiry time of a database-based session in the `middleware` handler. 
 
-## Getting Started
+Prisma is now rolling out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. This means that `@prisma/adapter-pg` is unfortunately not included for edge support at the moment as it is using the PostgreSQL-native TCP protocol. 
+
+As this example shows, however, using Prisma + Auth.js with an Edge-compatible database provider and adapter like Neon (Vercel Postgres), PlanetScale or Turso is beginning to become much more straightforward!
+
+## 🚀 Getting Started
 
 ### 1. Clone the repository and install dependencies
 
@@ -35,17 +39,17 @@ Copy the .env.local.example file in this directory to .env.local (which will be 
 cp .env.example .env
 ```
 
-Make sure to add an `AUTH_SECRET` as well as your Prisma database connection string. Also don't forget to add environment variables to setup any of the [supported providers](https://authjs.dev/reference/core/providers) as well.
+Make sure to fill out the `AUTH_SECRET` env var as well as your Prisma database connection string(s). Also, don't forget to add environment variables to configure any of the [supported providers](https://authjs.dev/reference/core/providers) for Auth.js login.
 
 ### 3. Database
 
-For this example, we'll of course need a Prisma Edge compatible database. These include:
+This example is configured to use a [Neon Postgres](https://neon.tech) database ([Vercel Postgres](https://vercel.com/storage/postgres) also works). Any Prisma Edge compatible database driver should work with a bit of tweaking though, these currently include:
 
 - **PlanetScale** serverless driver with `@prisma/adapter-planetscale`
 - **Neon** serverless driver with `@prisma/adapter-neon`
 - **Turso** with `@prisma/adapter-libsql`
 
-See their documentation for more details.
+See Prisma's Edge compatible driver documentation for more details.
 
 ### 4. Start the application
 
@@ -55,6 +59,6 @@ To run your site locally, use:
 pnpm dev
 ```
 
-## License
+## 📝 License
 
 MIT
