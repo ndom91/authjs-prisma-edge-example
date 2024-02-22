@@ -43,7 +43,7 @@ Copy the .env.local.example file in this directory to .env.local (which will be 
 cp .env.example .env
 ```
 
-Add details for one or more providers (e.g. Google, Twitter, GitHub, Email, etc).
+Make sure to add an `AUTH_SECRET` as well as your Prisma database connection string. Also don't forget to add environment variables to setup any of the [supported providers](https://authjs.dev/reference/core/providers) as well.
 
 ### 3. Database
 
