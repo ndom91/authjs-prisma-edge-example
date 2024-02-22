@@ -1,0 +1,52 @@
+{
+  "name": "authjs-prisma-edge-example",
+  "version": "0.1.0",
+  "description": "An example project for Auth.js Prisma Edge Client",
+  "repository": "https://github.com/ndom91/authjs-prisma-edge-example.git",
+  "author": "ndom91 <yo@ndo.dev>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "db:generate": "pnpm exec prisma generate",
+    "db:migrate": "pnpm exec prisma migrate dev",
+    "db:studio": "pnpm exec prisma studio",
+    "postinstall": "pnpm db:generate"
+  },
+  "dependencies": {
+    "@auth/prisma-adapter": "^1.4.0",
+    "@neondatabase/serverless": "^0.8.1",
+    "@prisma/adapter-neon": "5.10.0-dev.10",
+    "@prisma/client": "5.10.0-dev.10",
+    "@radix-ui/react-avatar": "^1.0.3",
+    "@radix-ui/react-collapsible": "^1.0.3",
+    "@radix-ui/react-dropdown-menu": "^2.0.5",
+    "@radix-ui/react-navigation-menu": "^1.1.3",
+    "@radix-ui/react-slot": "^1.0.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.274.0",
+    "next": "14.1.0",
+    "next-auth": "5.0.0-beta.13",
+    "prisma": "5.10.0-dev.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^1.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18",
+    "@types/react": "^18.2.23",
+    "@types/react-dom": "^18.2.8",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.3.3",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.2.2"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100
+  }
+}
