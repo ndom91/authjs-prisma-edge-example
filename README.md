@@ -6,7 +6,7 @@
    Open Source. Full Stack. Own Your Data.
    </p>
    <p align="center" style="align: center;">
-     <img align="center" alt="npm" src="https://img.shields.io/npm/v/next-auth/next?label=next-auth&style=for-the-badge&color=black&labelColor=black">
+     <img align="center" alt="npm" src="https://img.shields.io/npm/v/next-auth/beta?label=next-auth&style=for-the-badge&color=black&labelColor=black">
      <img align="center" src="https://img.shields.io/bundlephobia/minzip/next-auth/next?label=next-auth&style=for-the-badge&color=black&labelColor=black" alt="Bundle Size"/>
      <img align="center" src="https://img.shields.io/badge/npm-TypeScript-blue?style=for-the-badge&color=black&labelColor=black" alt="TypeScript" />
    </p>
