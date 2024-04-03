@@ -17,9 +17,12 @@ export default async function Index() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex gap-2 justify-between items-center p-4">
-          <h3 className="">Prisma Edge + Auth.js</h3>
-          <div className="flex gap-2 items-center">
+        <div className="flex gap-2 justify-between items-center">
+          <div className="flex gap-4 items-center">
+            <CustomLink href="https://www.prisma.io/blog/prisma-orm-support-for-edge-functions-is-now-in-preview">
+              Prisma Announcement Blog Post
+            </CustomLink>{" "}
+            |
             <CustomLink href="https://www.prisma.io/docs/orm/prisma-client/deployment/edge/overview">
               Prisma Edge Docs
             </CustomLink>{" "}
