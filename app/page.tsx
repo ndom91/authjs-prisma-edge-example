@@ -33,7 +33,7 @@ export default async function Index() {
           </div>
         </div>
         <div className="flex gap-8 justify-between items-center my-4">
-          <img src="/logo.png" alt="Home" width="72" height="72" />
+          <img src="https://authjs.dev/img/logo/logo-sm.webp" alt="Home" width="72" height="72" />
           <svg
             className="size-20"
             width="256px"

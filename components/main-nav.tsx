@@ -21,13 +21,13 @@ export function MainNav() {
     <div className="flex items-center space-x-2 lg:space-x-6">
       <CustomLink href="/">
         <Button variant="ghost" className="p-0">
-          <img src="/logo.png" alt="Home" width="32" height="32" />
+          <img src="https://authjs.dev/img/logo/logo-sm.webp" alt="Home" width="32" height="32" />
         </Button>
       </CustomLink>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-md">Server Side</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-base">Server Side</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                 <ListItem href="/server-example" title="RSC Example">
@@ -45,7 +45,7 @@ export function MainNav() {
           <NavigationMenuItem>
             <NavigationMenuLink
               href="/client-example"
-              className={cn("text-md", navigationMenuTriggerStyle())}
+              className={cn("!text-base", navigationMenuTriggerStyle())}
             >
               Client Side
             </NavigationMenuLink>
