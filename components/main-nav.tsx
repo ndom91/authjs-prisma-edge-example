@@ -45,7 +45,7 @@ export function MainNav() {
           <NavigationMenuItem>
             <NavigationMenuLink
               href="/client-example"
-              className={cn("text-md", ...navigationMenuTriggerStyle())}
+              className={cn("text-md", navigationMenuTriggerStyle())}
             >
               Client Side
             </NavigationMenuLink>
