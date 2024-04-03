@@ -6,20 +6,20 @@
    Open Source. Full Stack. Own Your Data.
    </p>
    <p align="center" style="align: center;">
-     <img align="center" alt="npm" src="https://img.shields.io/npm/v/next-auth?label=next-auth&style=flat-square&color=black&labelColor=black">
-     <img align="center" src="https://img.shields.io/bundlephobia/minzip/next-auth?label=next-auth&style=flat-square&color=black&labelColor=black" alt="Bundle Size"/>
-     <img align="center" src="https://img.shields.io/npm/dm/next-auth?label=next-auth%20downloads&style=flat-square&color=black&labelColor=black" alt="Downloads" />
-     <img align="center" src="https://img.shields.io/badge/npm-TypeScript-blue?style=flat-square&color=black&labelColor=black" alt="TypeScript" />
+     <img align="center" alt="npm" src="https://img.shields.io/npm/v/next-auth/next?label=next-auth&style=for-the-badge&color=black&labelColor=black">
+     <img align="center" src="https://img.shields.io/bundlephobia/minzip/next-auth/next?label=next-auth&style=for-the-badge&color=black&labelColor=black" alt="Bundle Size"/>
+     <img align="center" src="https://img.shields.io/npm/dm/next-auth?label=next-auth%20downloads&style=for-the-badge&color=black&labelColor=black" alt="Downloads" />
+     <img align="center" src="https://img.shields.io/badge/npm-TypeScript-blue?style=for-the-badge&color=black&labelColor=black" alt="TypeScript" />
    </p>
 </p>
 
 ## 🧭 Overview
 
-This is an example application showing [Auth.js](https://authjs.dev) (`next-auth@5.0.0-beta.13`) and [Prisma](https://prisma.io) (`@prisma/client@5.10.0-dev.10`) working together in edge runtimes, like Vercel's middleware. 
+This is an example application showing [Auth.js](https://authjs.dev) (`next-auth@5.0.0-beta.15`) and [Prisma](https://prisma.io) (`@prisma/client@5.12.0`) working together in edge runtimes, like Vercel's middleware or Cloudflare Workers.
 
-This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma began making changes to their client, for example, to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as the `strategy: 'database'` didn't work because we couldn't update the expiry time of a database-based session in the `middleware` handler. 
+This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma began making changes to their client, for example, to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as the `strategy: 'database'` didn't work because we couldn't update the expiry time of a database-based session in the `middleware` handler.
 
-Prisma is now rolling out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. This means that `@prisma/adapter-pg` is unfortunately not going to be supported under edge runtimes for the time being as it is using the PostgreSQL-native TCP protocol. 
+Prisma has now rolled out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. You can check out their [edge deployment](https://www.prisma.io/docs/orm/prisma-client/deployment/edge/overview#which-database-drivers-are-edge-compatible) page for a current list of supported adapters and platforms.
 
 As this example shows, however, using Prisma + Auth.js with an Edge-compatible database provider and adapter like Neon (Vercel Postgres), PlanetScale or Turso is beginning to become much more straightforward!
 
@@ -50,8 +50,10 @@ This example is configured to use a [Neon Postgres](https://neon.tech) database 
 - **PlanetScale** serverless driver with `@prisma/adapter-planetscale`
 - **Neon** serverless driver with `@prisma/adapter-neon`
 - **Turso** with `@prisma/adapter-libsql`
+- **Cloudflare D1** with `@prisma/adapter-d1`
+- **PostgreSQL** with `@prisma/adapter-pg`
 
-See Prisma's Edge compatible driver documentation for more details.
+See Prisma's Edge compatible driver [documentation](https://www.prisma.io/docs/orm/prisma-client/deployment/edge/overview) for more details.
 
 ### 4. Start the application
 
