@@ -19,7 +19,6 @@ export const {
   signOut,
   unstable_update: update,
 } = NextAuth({
-  debug: true,
   adapter: PrismaAdapter(prisma),
   providers: [
     GitHub,
