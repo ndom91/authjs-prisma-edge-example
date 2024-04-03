@@ -16,7 +16,7 @@
 
 This is an example application showing [Auth.js](https://authjs.dev) (`next-auth@5.0.0-beta.15`) and [Prisma](https://prisma.io) (`@prisma/client@5.12.0`) working together in edge runtimes, like Vercel's middleware or Cloudflare Workers.
 
-This had previously only been possible with significant workarounds. As of `@prisma/client@5.9.1` Prisma began making changes to their client, for example, to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as the `strategy: 'database'` didn't work because we couldn't update the expiry time of a database-based session in the `middleware` handler.
+This had previously only been possible with significant workarounds and limitations. As of `@prisma/client@5.9.1` Prisma began making changes to their client, for example, to error out at query-time, not instantiation. So you could begin using Prisma with `next-auth` in Edge runtimes, as long as you didn't actually execute any queries on the edge. This implied using the Auth.js setting `session: { strategy: 'jwt' }`, as the `strategy: 'database'` didn't work because we couldn't update the expiry time of a database-based session in the `middleware` handler.
 
 Prisma has now rolled out edge-compatible clients and adapters which communicate via HTTP, making them much more straightforward to run under any JavaScript runtime. You can check out their [edge deployment](https://www.prisma.io/docs/orm/prisma-client/deployment/edge/overview#which-database-drivers-are-edge-compatible) page for a current list of supported adapters and platforms.
 
