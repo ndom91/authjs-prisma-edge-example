@@ -30,7 +30,7 @@ export const {
           id: "1",
           name: "Fill Murray",
           email: "bill@fillmurray.com",
-          image: "https://source.boringavatars.com/beam/120",
+          image: "https://source.boringavatars.com/marble/120",
         }
       },
     }),
