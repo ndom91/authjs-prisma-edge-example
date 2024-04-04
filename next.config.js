@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  webpack(config) {
-    config.experiments ??= {}
-    config.experiments.asyncWebAssembly = true
+const nextConfig = {}
 
-    return config
-  },
-}
 module.exports = nextConfig

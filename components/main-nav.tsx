@@ -20,9 +20,7 @@ export function MainNav() {
   return (
     <div className="flex items-center space-x-2 lg:space-x-6">
       <CustomLink href="/">
-        <Button variant="ghost" className="p-0">
-          <img src="https://authjs.dev/img/logo/logo-sm.webp" alt="Home" width="32" height="32" />
-        </Button>
+        <img src="https://authjs.dev/img/logo/logo-sm.webp" alt="Home" width="32" height="32" />
       </CustomLink>
       <NavigationMenu>
         <NavigationMenuList>
