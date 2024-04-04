@@ -2,8 +2,8 @@
 const nextConfig = {
   webpack(config) {
     config.experiments = {
-      asyncWebAssembly = true,
-      layers: true
+      asyncWebAssembly: true,
+      layers: true,
     }
 
     return config
